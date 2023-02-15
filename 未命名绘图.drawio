@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-02-15T10:31:30.974Z" agent="5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36" etag="4x4PsVXvbuPXcwD3eVcE" version="20.8.3" type="github">
+<mxfile host="app.diagrams.net" modified="2023-02-15T10:32:14.501Z" agent="5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36" etag="7mC5nQaI-_af1Help7L8" version="20.8.3" type="github">
   <diagram id="aYU08qvSdbatKfGh7LU7" name="第 1 页">
     <mxGraphModel dx="2261" dy="763" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -82,7 +82,7 @@
           <mxGeometry x="330" y="570" width="110" height="30" as="geometry" />
         </mxCell>
         <mxCell id="AAbSFF_3w6VQspWgnhy2-26" value="&lt;div&gt;&lt;b&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;主从架构简介: 部署多台redis节点，其中只有一台节点是主节点（master），其他的节点都是从节点（slave）.&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;font size=&quot;3&quot;&gt;只有master节点提供数据的事务性操作（增删改），slave节点只提供读操作。slave节点的数据是从master节点同步过来的.&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;font size=&quot;3&quot;&gt;主从复制风暴:出现某一瞬间或者某一段时间，有多个的从节点要从主节点复制数据，主节点压力过大，所以我们讲slave2的同步由master改为slave1，以缓解主节点压力，&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;font size=&quot;3&quot;&gt;哨兵架构简介: 主从架构无法实现高可用当主服务器宕机后，需要手动把一台从服务器切换为主服务器，这就需要人工干预，既费时费力，还会造成一段时间内服务不可用.&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;font size=&quot;3&quot;&gt;配置哨兵节点则可以通过发送命令，让 Redis 服务器返回监测其运行状态，包括主服务器和从服务器当哨兵监测到 master 宕机，会自动将 slave 切换成 master，&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;font size=&quot;3&quot;&gt;然后通过发布订阅模式通知到其他的从服务器，修改配置文件，让它们切换主机. 哨兵节点是一个独立的进程，作为进程，它会独立运行,不会参与服务读写,只做监控使用&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;font size=&quot;3&quot;&gt;生产环境中一个哨兵进程对 Redis 服务器进行监控，也可能出现问题，为了处理这个问题，还可以使用多个哨兵的监控，&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;font size=&quot;3&quot;&gt;而各个哨兵之间还会相互监控，这样就变为了多个哨兵模式。多个哨兵不仅监控各个 Redis 服务器，而且哨兵之间互相监控&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
-          <mxGeometry x="-18" y="510" width="868" height="402.5" as="geometry" />
+          <mxGeometry x="-18" y="530" width="868" height="382.5" as="geometry" />
         </mxCell>
         <mxCell id="9hXP-JQpE5FFyOFFZCri-1" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;&lt;b&gt;redis哨兵+主从架构图&lt;/b&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="285" y="25" width="200" height="30" as="geometry" />
